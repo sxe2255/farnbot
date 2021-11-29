@@ -45,7 +45,7 @@
   //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
   $params=[
     'chat_id'=>$chatId, 
-    'text'=>$textForSend,
+    'text'=>'new text',
     'inline_message_id'=>'123',
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
