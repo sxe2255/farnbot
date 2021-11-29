@@ -64,8 +64,8 @@ if($content){
   $contentSMassegeId = $contentSMassege['message_id'];
 
     $textForSend = $content;
-    //sendMessage($website, $params2);
-    editMessage($website, $params);
+    sendMessage($website, $params2);
+    //editMessage($website, $params);
 }
 else{
   $textForSend = $content;
