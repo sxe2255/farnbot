@@ -67,7 +67,8 @@ if($content){
   }
   else if($contentS['callback_query']){
     $textForSend = $content;
-    editMessage($website, $params);
+    sendMessage($website, $params2);
+    //editMessage($website, $params);
   }
 }
 else{
