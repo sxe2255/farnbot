@@ -47,13 +47,13 @@
     'text'=>$textForSend,
     'message_id'=>202,
     'parse_mode' => 'HTML',
-    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
 ];
   $params2=[
     'chat_id'=>$chatId, 
     'text'=>$textForSend,
     'parse_mode' => 'HTML',
-    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
 ];
 
 if($content){
