@@ -46,9 +46,9 @@
   $params=[
     'chat_id'=>$chatId, 
     'text'=>'new text',
-    'inline_message_id'=>'1223',
+    'message_id'=>'220',
     'parse_mode' => 'HTML',
-    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
 ];
   $params2=[
     'chat_id'=>$chatId, 
@@ -64,8 +64,8 @@ if($content){
   $contentSMassegeId = $contentSMassege['message_id'];
 
     $textForSend = $content;
-    sendMessage($website, $params2);
-    //editMessage($website, $params);
+    //sendMessage($website, $params2);
+    editMessage($website, $params);
 }
 else{
   $textForSend = $content;
