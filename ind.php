@@ -62,8 +62,8 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-
-    $textForSend = $contentSMassegeId;
+  $textForSend='';
+    $textForSend .= $contentSMassegeId;
     sendMessage($website, $params2);
     //editMessage($website, $params);
 }
