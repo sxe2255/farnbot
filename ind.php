@@ -1,0 +1,111 @@
+<?php 
+  $content = file_get_contents("php://input");
+  $update = json_decode($content, true);
+	$textForSend = "hi hi hi"; 
+
+  $t = '{"update_id":552461978,"poll_answer":{"poll_id":"5248948977767809147","user":{"id":91211691,"is_bot":false,"first_name":"Ilya","last_name":"Kanapelka","username":"Ilyakanapelka","language_code":"ru"},"option_ids":[0,1,2]}}';
+  $te = (array) json_decode($t);
+  $tex = (array) $te['poll_answer'];
+
+  $userInfo = (array) $tex['user']; 
+  $userId = $userInfo['id'];
+  var_dump ($tex['option_ids']);
+  for($y=0;$y<=count($tex['option_ids'])-1;$y++){
+    echo $tex['option_ids'][$y];
+  }
+
+  $regex='/\[([\s\S]*?)\]/iu';
+  $href='';
+  $pArr=array('<p>','</p>','<br>');
+  $prot = 111;
+  $keyboard = array(
+    array(
+       array('text'=>'Ссылка на заявку',
+       //'url'=>$href,
+       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaszxcd','mjmj':'123z'}"
+       )
+    )
+  );
+
+  
+  $textForSend .= $content;
+
+
+  $botToken="2129085674:AAG-NyC4bNJFEeUhy8ywWD0O-T2gfObm97I";
+  $chatId = 91211691;
+  $website="https://api.telegram.org/bot".$botToken;
+  //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
+  $params=[
+      'chat_id'=>$chatId, 
+      //'text'=>$textForSend,
+      'question'=>'bgj jgsdfsadsd?',
+      'options'=>json_encode(array('1asd','2ccc','3asd')),
+      'is_anonymous'=>false,
+      //''=>,
+      'allows_multiple_answers'=>true,
+      //'parse_mode' => 'HTML',
+      //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+  ];
+  $params2=[
+    'chat_id'=>$chatId, 
+    'text'=>$textForSend,
+    'parse_mode' => 'HTML',
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+];
+
+if($content){
+  $contentS = (array)json_decode($content);
+  $contentSCallback = (array)$contentS['callback_query'];
+  $contentSMassege = (array) $contentS['message'];
+  $contentSMassegeId = $contentSMassege['message_id'];
+  $params=[
+    'chat_id'=>$chatId, 
+    //'text'=>$textForSend,
+    'question'=>'bgj jgsdfsadsd?',
+    'options'=>json_encode(array('1asd','2ccc','3asd')),
+    'is_anonymous'=>false,
+    'reply_markup'=>json_encode(array(
+       //'url'=>$href,
+       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaszxcd','mjmj':'123z'}"
+      )),
+    'allows_multiple_answers'=>true,
+    //'parse_mode' => 'HTML',
+    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+];
+  if($contentS['poll_answer']){
+    $textForSend = $content;
+    sendMessage($website, $params2);
+  }
+  else if($contentS['callback_query']){
+    $textForSend = $content;
+    sendMessage($website, $params2);
+
+    sendPoll($website,$params);
+  }
+}
+else{
+  $textForSend = $content;
+  sendMessage($website, $params2);
+}
+
+function sendMessage($website, $params2){
+  $chs = curl_init($website . '/sendMessage');
+  curl_setopt($chs, CURLOPT_HEADER, false);
+  curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($chs, CURLOPT_POST, 1);
+  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
+  curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
+  $result = curl_exec($chs);
+}
+
+function sendPoll($website, $params){
+  $ch = curl_init($website . '/sendPoll');
+  curl_setopt($ch, CURLOPT_HEADER, false);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  $result = curl_exec($ch);
+}
+
+?>
