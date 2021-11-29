@@ -26,7 +26,14 @@
        )
     )
   );
-
+  $keyboard2 = array(
+    array(
+       array('text'=>'ssss на заявку',
+       //'url'=>$href,
+       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaszxcd','mjmj':'123z'}"
+       )
+    )
+  );
   
   $textForSend .= $content;
 
@@ -35,12 +42,18 @@
   $chatId = 91211691;
   $website="https://api.telegram.org/bot".$botToken;
   //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
-
+  $params=[
+    'chat_id'=>$chatId, 
+    'text'=>$textForSend,
+    'message_id'=>202,
+    'parse_mode' => 'HTML',
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+];
   $params2=[
     'chat_id'=>$chatId, 
     'text'=>$textForSend,
     'parse_mode' => 'HTML',
-    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
 ];
 
 if($content){
@@ -48,27 +61,13 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-  $params=[
-    'chat_id'=>$chatId, 
-    //'text'=>$textForSend,
-    'question'=>'bgj jgsdfsadsd?',
-    'options'=>json_encode(array('1asd','2ccc','3asd')),
-    'is_anonymous'=>false,
-    'reply_markup'=>json_encode(array(
-       //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaszxcd','mjmj':'123z'}"
-      )),
-    'allows_multiple_answers'=>true,
-    //'parse_mode' => 'HTML',
-    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
-];
   if($contentS['poll_answer']){
     $textForSend = $content;
     sendMessage($website, $params2);
   }
   else if($contentS['callback_query']){
     $textForSend = $content;
-    sendMessage($website, $params2);
+    editMessage($website, $params);
   }
 }
 else{
@@ -82,6 +81,15 @@ function sendMessage($website, $params2){
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
   curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
+  curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
+  $result = curl_exec($chs);
+}
+function editMessage($website, $params){
+  $chs = curl_init($website . '/editMessageText');
+  curl_setopt($chs, CURLOPT_HEADER, false);
+  curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($chs, CURLOPT_POST, 1);
+  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
 }
