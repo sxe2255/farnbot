@@ -61,15 +61,10 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-  if($contentS['poll_answer']){
-    $textForSend = $content;
-    sendMessage($website, $params2);
-  }
-  else if($contentS['callback_query']){
+
     $textForSend = $content;
     sendMessage($website, $params2);
     //editMessage($website, $params);
-  }
 }
 else{
   $textForSend = $content;
