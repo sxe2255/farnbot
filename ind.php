@@ -86,7 +86,7 @@ function editMessage($website, $params){
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
-  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params));
+  curl_setopt($chs, CURLOPT_POSTFIELDS, (json_encode($params)));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
 }
