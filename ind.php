@@ -21,7 +21,7 @@
   $keyboard = array(
     array(
        array('text'=>'Ссылка на заявку',
-       'id'=>'123',
+       'id'=>'1223',
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'asdasd':'asdaszxcd','mjmj':'123z'}"
        )
@@ -46,7 +46,7 @@
   $params=[
     'chat_id'=>$chatId, 
     'text'=>'new text',
-    'inline_message_id'=>'123',
+    'inline_message_id'=>'1223',
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
 ];
