@@ -35,17 +35,7 @@
   $chatId = 91211691;
   $website="https://api.telegram.org/bot".$botToken;
   //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
-  $params=[
-      'chat_id'=>$chatId, 
-      //'text'=>$textForSend,
-      'question'=>'bgj jgsdfsadsd?',
-      'options'=>json_encode(array('1asd','2ccc','3asd')),
-      'is_anonymous'=>false,
-      //''=>,
-      'allows_multiple_answers'=>true,
-      //'parse_mode' => 'HTML',
-      //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
-  ];
+
   $params2=[
     'chat_id'=>$chatId, 
     'text'=>$textForSend,
@@ -79,8 +69,6 @@ if($content){
   else if($contentS['callback_query']){
     $textForSend = $content;
     sendMessage($website, $params2);
-
-    sendPoll($website,$params);
   }
 }
 else{
@@ -96,16 +84,6 @@ function sendMessage($website, $params2){
   curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
-}
-
-function sendPoll($website, $params){
-  $ch = curl_init($website . '/sendPoll');
-  curl_setopt($ch, CURLOPT_HEADER, false);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, ($params));
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-  $result = curl_exec($ch);
 }
 
 ?>
