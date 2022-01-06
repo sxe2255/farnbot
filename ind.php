@@ -46,7 +46,7 @@
   $params=[
     'chat_id'=>$chatId, 
     'text'=>'new text',
-    'message_id'=>'',
+    'inline_message_id'=>'',
     'parse_mode' => 'HTML',
     //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
@@ -69,7 +69,7 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-  $params['message_id'] = '322';
+  $params['inline_message_id'] = '1641471488';
   $params['text'] =''.$content;
   $textForSend='';
   $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
