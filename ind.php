@@ -63,7 +63,7 @@
   //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   
-  var_dump($params);
+  echo $params['message_id'];
   
 if($content){
   $contentS = (array)json_decode($content);
