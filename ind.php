@@ -63,16 +63,16 @@
   //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   
-  echo $params['message_id'];
   
 if($content){
   $contentS = (array)json_decode($content);
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
+  $params['message_id'] = $contentSMassegeId;
   $textForSend='';
     $textForSend = (string)$contentSMassegeId;
-    sendMessage($website, $params2);
+    sendMessage($website, $params);
     //sendMessageCont($website, $params3);
     //editMessage($website, $params);
 }
