@@ -69,18 +69,14 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-  $params['message_id'] = $contentSMassegeId;
+  $params['message_id'] = '322';
   $params['text'] =''.$content;
   $textForSend='';
   $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
     $textForSend = (string)$contentSMassegeId;
     //sendMessage($website, $params);
     //sendMessageCont($website, $params3);
-    if(editMessage($website, $params)===false){
-      $errors = curl_error($chs2);
-    }
-    $textForSend = $errors;
-    sendMessage($website, $params);
+    editMessage($website, $params);
 }
 else{
   $textForSend = $content;
@@ -98,13 +94,13 @@ function sendMessage($website, $params2){
   $result = curl_exec($chs);
 }
 function editMessage($website, $params){
-  $chs2 = curl_init($website . '/editMessageText');
+  $chs = curl_init($website . '/editMessageText');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
   curl_setopt($chs, CURLOPT_POSTFIELDS, ($params));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
-  curl_exec($chs2);
+  $result = curl_exec($chs);
 }
 
 
