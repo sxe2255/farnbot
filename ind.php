@@ -63,7 +63,7 @@
   //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   
-  var_dump($keyboard2[0][0]['callback_data']);
+  //var_dump($keyboard2[0][0]['callback_data']);
 if($content){
   $contentS = (array)json_decode($content);
   $contentSCallback = (array)$contentS['callback_query'];
@@ -94,13 +94,13 @@ function sendMessage($website, $params2){
   $result = curl_exec($chs);
 }
 function editMessage($website, $params){
-  $chs = curl_init($website . '/editMessageText');
+  $chs2 = curl_init($website . '/editMessageText');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
   curl_setopt($chs, CURLOPT_POSTFIELDS, ($params));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
-  $result = curl_exec($chs);
+  $result = curl_exec($chs2);
 }
 
 
