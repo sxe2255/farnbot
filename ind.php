@@ -76,7 +76,9 @@ if($content){
     $textForSend = (string)$contentSMassegeId;
     //sendMessage($website, $params);
     //sendMessageCont($website, $params3);
-    editMessage($website, $params);
+    $errors = editMessage($website, $params);
+    $textForSend = $errors;
+    sendMessage($website, $params);
 }
 else{
   $textForSend = $content;
@@ -100,7 +102,9 @@ function editMessage($website, $params){
   curl_setopt($chs, CURLOPT_POST, 1);
   curl_setopt($chs, CURLOPT_POSTFIELDS, ($params));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
-  $result = curl_exec($chs2);
+  if(curl_exec($chs2)===false){
+    curl_error($chs2);
+  };
 }
 
 
