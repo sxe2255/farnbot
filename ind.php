@@ -43,25 +43,7 @@
   $chatId = 91211691;
   $website="https://api.telegram.org/bot".$botToken;
   //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
-  $params=[
-    'chat_id'=>$chatId, 
-    'text'=>'new text',
-    'message_id'=>'220',
-    'parse_mode' => 'HTML',
-    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
-];
-  $params2=[
-    'chat_id'=>$chatId, 
-    'text'=>$textForSend,
-    'parse_mode' => 'HTML',
-    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
-];
-$params3=[
-  'chat_id'=>$chatId, 
-  'text'=>$content,
-  'parse_mode' => 'HTML',
-  //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
-];
+  
 if($content){
   $contentS = (array)json_decode($content);
   $contentSCallback = (array)$contentS['callback_query'];
@@ -69,14 +51,36 @@ if($content){
   $contentSMassegeId = $contentSMassege['message_id'];
   $textForSend='';
     $textForSend = (string)$contentSMassegeId;
-    sendMessage($website, $params2);
-    //sendMessageCont($website, $params3);
-    //editMessage($website, $params);
+    //sendMessage($website, $params2);
+    sendMessageCont($website, $params3);
+    editMessage($website, $params);
 }
 else{
   $textForSend = $content;
   sendMessage($website, $params2);
 }
+
+
+$params=[
+  'chat_id'=>$chatId, 
+  'text'=>'new text',
+  'message_id'=>'220',
+  'parse_mode' => 'HTML',
+  //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+];
+$params2=[
+  'chat_id'=>$chatId, 
+  'text'=>$textForSend,
+  'parse_mode' => 'HTML',
+  'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
+];
+$params3=[
+'chat_id'=>$chatId, 
+'text'=>$content,
+'parse_mode' => 'HTML',
+//'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+];
+
 
 function sendMessage($website, $params2){
   $chs = curl_init($website . '/sendMessage');
