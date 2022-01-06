@@ -56,7 +56,12 @@
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
 ];
-
+$params3=[
+  'chat_id'=>$chatId, 
+  'text'=>$content,
+  'parse_mode' => 'HTML',
+  //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+];
 if($content){
   $contentS = (array)json_decode($content);
   $contentSCallback = (array)$contentS['callback_query'];
@@ -66,6 +71,7 @@ if($content){
     $textForSend = (string)$contentSMassegeId;
     //sendMessage($website, $params2);
     editMessage($website, $params);
+    sendMessageCont($website, $params3);
 }
 else{
   $textForSend = $content;
@@ -90,5 +96,19 @@ function editMessage($website, $params){
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
 }
+
+
+
+function sendMessageCont($website, $params3){
+  $chs = curl_init($website . '/sendMessage');
+  curl_setopt($chs, CURLOPT_HEADER, false);
+  curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($chs, CURLOPT_POST, 1);
+  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
+  curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
+  $result = curl_exec($chs);
+}
+
+
 
 ?>
