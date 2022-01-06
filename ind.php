@@ -72,7 +72,7 @@ if($content){
   $params['message_id'] = $contentSMassegeId;
   $params['text'] =''.$content;
   $textForSend='';
-  $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].',massage_text:'.$contentSMassegeId;
+  $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].',massage_text'.":".$contentSMassegeId;
     $textForSend = (string)$contentSMassegeId;
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
