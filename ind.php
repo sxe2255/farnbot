@@ -63,7 +63,7 @@
   //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   
-  var_dump($keyboard2[0][0]);
+  var_dump($keyboard2[0][0]['callback_data']);
 if($content){
   $contentS = (array)json_decode($content);
   $contentSCallback = (array)$contentS['callback_query'];
