@@ -48,7 +48,7 @@
     'text'=>'new text',
     'message_id'=>'',
     'parse_mode' => 'HTML',
-    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
     'chat_id'=>$chatId, 
