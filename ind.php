@@ -46,9 +46,9 @@
   $params=[
     'chat_id'=>$chatId, 
     'text'=>'new text',
-    'message_id'=>'220',
+    'message_id'=>'',
     'parse_mode' => 'HTML',
-    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
     'chat_id'=>$chatId, 
@@ -63,7 +63,7 @@
   //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   
-  
+  echo $keyboard2[0][0][0];
 if($content){
   $contentS = (array)json_decode($content);
   $contentSCallback = (array)$contentS['callback_query'];
