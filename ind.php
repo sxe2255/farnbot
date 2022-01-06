@@ -70,6 +70,7 @@ if($content){
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
   $params['message_id'] = $contentSMassegeId;
+  $params['text'] = $contentS;
   $textForSend='';
     $textForSend = (string)$contentSMassegeId;
     sendMessage($website, $params);
