@@ -31,7 +31,7 @@
     array(
        array('text'=>'ssss на заявку',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaszxcd','mjmj':'123z'}"
+       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaweszxcd','mjmj':'123asdz'}"
        )
     )
   );
