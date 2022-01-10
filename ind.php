@@ -113,12 +113,12 @@ function editMessage($website, $params){
 
 function sendMessageCont($website, $params){
   $chss = curl_init($website . '/sendMessage');
-  curl_setopt($chs, CURLOPT_HEADER, false);
-  curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($chs, CURLOPT_POST, 1);
-  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
-  curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
-  $result = curl_exec($chss);
+  curl_setopt($chss, CURLOPT_HEADER, false);
+  curl_setopt($chss, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($chss, CURLOPT_POST, 1);
+  curl_setopt($chss, CURLOPT_POSTFIELDS, ($params));
+  curl_setopt($chss, CURLOPT_SSL_VERIFYPEER, false);
+  $results = curl_exec($chss);
 }
 
 
