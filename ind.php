@@ -73,7 +73,8 @@ if($content){
   $params['text'] =''.$content;
   $textForSend='';
   //$keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
-    $textForSend = (string)$contentSMassegeId;
+    //$textForSend = (string)$contentSMassegeId;
+    $textForSend = $params['inline_message_id'];
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
     editMessage($website, $params);
