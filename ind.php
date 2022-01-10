@@ -69,12 +69,12 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-  $params['inline_message_id'] = '123';
+  $params['inline_message_id'] = $contentSCallback['id'];
   $params['text'] =''.$content;
   $textForSend='';
-  $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
+  //$keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
     $textForSend = (string)$contentSMassegeId;
-    sendMessage($website, $params);
+    //sendMessage($website, $params);
     //sendMessageCont($website, $params3);
     editMessage($website, $params);
 }
