@@ -44,6 +44,7 @@
   $website="https://api.telegram.org/bot".$botToken;
   //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
   $params=[
+    'chat_id'=>$chatId,
     'inline_message_id'=>'123',
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
@@ -55,6 +56,7 @@
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
   ];
   $params3=[
+    
   'chat_id'=>$chatId, 
   'text'=>$content,
   'parse_mode' => 'HTML',
