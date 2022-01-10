@@ -46,6 +46,7 @@
   $params=[
     'chat_id'=>$chatId,
     'inline_message_id'=>'123',
+    'text'=>$textForSend,
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
