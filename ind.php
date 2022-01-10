@@ -65,6 +65,8 @@
   ];
   
   //var_dump($keyboard2[0][0]['callback_data']);
+  
+  $textForSend = ' ';
 if($content){
   // $contentS = (array)json_decode($content);
   // $contentSCallback = (array)$contentS['callback_query'];
@@ -78,7 +80,7 @@ if($content){
 
 
     $textForSend = ' ';
-    sendMessage($website, $params);
+    sendMessageCont($website, $params);
     //sendMessageCont($website, $params3);
     editMessage($website, $params);
 }
@@ -109,7 +111,7 @@ function editMessage($website, $params){
 
 
 
-function sendMessageCont($website, $params3){
+function sendMessageCont($website, $params){
   $chs = curl_init($website . '/sendMessage');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
