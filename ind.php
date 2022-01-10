@@ -68,8 +68,8 @@
   
   $textForSend = ' ';
   
-  var_dump($params['text']);
-if($content){
+  
+if($content = "asdasd"){
   // $contentS = (array)json_decode($content);
   // $contentSCallback = (array)$contentS['callback_query'];
   // $contentSMassege = (array) $contentS['message'];
@@ -80,8 +80,10 @@ if($content){
   //$keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
   //$textForSend = (string)$contentSMassegeId;
 
-
+  echo($params['text']);
   $params['text'] = ' ';
+  
+  echo($params['text']);
     sendMessageCont($website, $params);
     //sendMessageCont($website, $params3);
     //editMessage($website, $params);
