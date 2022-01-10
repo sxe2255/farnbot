@@ -23,7 +23,7 @@
        array('text'=>'Ссылка на заявку',
        'id'=>'1223',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'inline_message_id':'123','asdasd':'asdaszxcd','mjmj':'123z'}"
+       'callback_data'=>"{'text':".$prot.",'inline_message_id':'123','asdasd':'asdaszxcd'}"
        )
     )
   );
