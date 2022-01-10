@@ -81,7 +81,7 @@ if($content = "asdasd"){
   //$textForSend = (string)$contentSMassegeId;
 
   echo($params['text']);
-  $params['text'] = ' ';
+  $params['text'] = 'asd';
   
   echo($params['text']);
     sendMessageCont($website, $params);
