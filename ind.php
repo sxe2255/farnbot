@@ -53,6 +53,7 @@
   $params2=[
     'chat_id'=>$chatId, 
     'text'=>$textForSend,
+    'inline_message_id'=>'123',
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
   ];
@@ -69,14 +70,14 @@ if($content){
   $contentSCallback = (array)$contentS['callback_query'];
   $contentSMassege = (array) $contentS['message'];
   $contentSMassegeId = $contentSMassege['message_id'];
-  $params['inline_message_id'] = '1641471488';
+  $params['inline_message_id'] = '123';
   $params['text'] =''.$content;
   $textForSend='';
   $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
     $textForSend = (string)$contentSMassegeId;
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
-    //editMessage($website, $params);
+    editMessage($website, $params);
 }
 else{
   $textForSend = $content;
@@ -94,7 +95,7 @@ function sendMessage($website, $params2){
   $result = curl_exec($chs);
 }
 function editMessage($website, $params){
-  $chs = curl_init($website . '/editMessageText');
+  $chs = curl_init($website . '/editMessageReplyMarkup');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
