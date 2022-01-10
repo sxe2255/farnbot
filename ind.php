@@ -66,16 +66,18 @@
   
   //var_dump($keyboard2[0][0]['callback_data']);
 if($content){
-  $contentS = (array)json_decode($content);
-  $contentSCallback = (array)$contentS['callback_query'];
-  $contentSMassege = (array) $contentS['message'];
-  $contentSMassegeId = $contentSMassege['message_id'];
-  $params['inline_message_id'] = $contentSCallback['id'];
-  $params['text'] =''.$content;
-  $textForSend='';
+  // $contentS = (array)json_decode($content);
+  // $contentSCallback = (array)$contentS['callback_query'];
+  // $contentSMassege = (array) $contentS['message'];
+  // $contentSMassegeId = $contentSMassege['message_id'];
+  // $params['inline_message_id'] = $contentSCallback['id'];
+  // $params['text'] =''.$content;
+  // $textForSend='';
   //$keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
-    //$textForSend = (string)$contentSMassegeId;
-    $textForSend = $params['inline_message_id'];
+  //$textForSend = (string)$contentSMassegeId;
+
+
+    $textForSend = ' ';
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
     editMessage($website, $params);
