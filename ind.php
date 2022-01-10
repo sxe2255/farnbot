@@ -44,11 +44,9 @@
   $website="https://api.telegram.org/bot".$botToken;
   //$chatId;  //** ===>>>NOTE: this chatId MUST be the chat_id of a person, NOT another bot chatId !!!**
   $params=[
-    'chat_id'=>$chatId, 
-    'text'=>'new text',
-    'inline_message_id'=>'',
+    'inline_message_id'=>'123',
     'parse_mode' => 'HTML',
-    //'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
+    'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
     'chat_id'=>$chatId, 
@@ -74,9 +72,9 @@ if($content){
   $textForSend='';
   $keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
     $textForSend = (string)$contentSMassegeId;
-    sendMessage($website, $params);
+    //sendMessage($website, $params);
     //sendMessageCont($website, $params3);
-    //editMessage($website, $params);
+    editMessage($website, $params);
 }
 else{
   $textForSend = $content;
