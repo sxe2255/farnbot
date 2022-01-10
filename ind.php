@@ -69,7 +69,7 @@
   $textForSend = ' ';
   
   
-if($content = "asdasd"){
+if($content){
   // $contentS = (array)json_decode($content);
   // $contentSCallback = (array)$contentS['callback_query'];
   // $contentSMassege = (array) $contentS['message'];
