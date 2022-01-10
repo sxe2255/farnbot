@@ -79,10 +79,10 @@ if($content){
     //sendMessageCont($website, $params3);
     editMessage($website, $params);
 }
-//else{
-//  $textForSend = $content;
-//  sendMessage($website, $params2);
-//}
+else{
+  $textForSend = $content;
+  sendMessage($website, $params2);
+}
 
 
 function sendMessage($website, $params2){
