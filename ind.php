@@ -82,7 +82,7 @@ if($content){
     $textForSend = ' ';
     sendMessageCont($website, $params);
     //sendMessageCont($website, $params3);
-    editMessage($website, $params);
+    //editMessage($website, $params);
 }
 else{
   $textForSend = $content;
