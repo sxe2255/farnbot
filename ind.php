@@ -67,6 +67,8 @@
   //var_dump($keyboard2[0][0]['callback_data']);
   
   $textForSend = ' ';
+  
+  var_dump($params['text']);
 if($content){
   // $contentS = (array)json_decode($content);
   // $contentSCallback = (array)$contentS['callback_query'];
