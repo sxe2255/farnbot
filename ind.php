@@ -59,7 +59,7 @@
     'message_id'=>'',
     'text'=>$textForSend,
     'parse_mode' => 'MarkdownV2',
-    'reply_markup' => 'inline_keyboard' => $keyboard2)
+    'reply_markup' => (array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
     'chat_id'=>$chatId, 
