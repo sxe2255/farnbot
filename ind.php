@@ -58,7 +58,7 @@
     //'inline_message_id'=>'123',
     'message_id'=>'',
     'text'=>$textForSend,
-    'parse_mode' => 'MarkdownV2',
+//     'parse_mode' => 'MarkdownV2',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
@@ -114,7 +114,7 @@ function sendMessage($website, $params2){
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
 }
-function editMessage($website, $params){
+function editMessage($website, $params, parse_mode='MarkdownV2'){
   $chs = curl_init($website . '/editMessageReplyMarkup');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
