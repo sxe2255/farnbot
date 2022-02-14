@@ -82,9 +82,8 @@ if($content){
   //$textForSend = (string)$contentSMassegeId;
 
   echo($params['text']);
-  
-  $params['message_id'] = $content['message']['message_id'];
-  $textForSend = ''.$params['message_id'];
+  $params['message_id'] = '';
+  $textForSend = ''.$content;
   echo($params['text']);
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
