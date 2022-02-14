@@ -27,7 +27,11 @@
        array('text'=>'Ссылка на заявку',
        'id'=>'1223',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'cartrider':'false','asdasd':'asdaszxcd'}"
+       'callback_data'=>"{'text':".$prot.",'Картридер':'false','asdasd':'asdaszxcd'}"
+      ),
+      array('text'=>'Картридер',
+       //'url'=>$href,
+       'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
        )
     )
   );
@@ -35,7 +39,7 @@
     array(
        array('text'=>'ssss на заявку',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'cartrider':'true','mjmj':'123asdz'}"
+       'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
        )
     )
   );
