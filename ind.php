@@ -82,7 +82,7 @@ if($content){
 
   echo($params['text']);
   $params['text'] = 'asd';
-  
+  $textForSend = ''.$content;
   echo($params['text']);
     sendMessageCont($website, $params);
     //sendMessageCont($website, $params3);
