@@ -31,7 +31,7 @@
       ),
       array('text'=>'Картридер',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
+       'callback_data'=>"{'text':".$prot.",'Картиридер':'false','mjmj':'123asdz'}"
        )
     )
   );
@@ -40,7 +40,11 @@
        array('text'=>'ssss на заявку',
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
-       )
+       ),
+       array('text'=>'~Картридер~',
+        //'url'=>$href,
+        'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
+        )
     )
   );
 
