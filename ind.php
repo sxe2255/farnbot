@@ -2,7 +2,7 @@
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
 	$textForSend = "hi hi hi"; 
-
+sendMessage($website, $params2);
   $t = '{"update_id":552461978,"poll_answer":{"poll_id":"5248948977767809147","user":{"id":91211691,"is_bot":false,"first_name":"Ilya","last_name":"Kanapelka","username":"Ilyakanapelka","language_code":"ru"},"option_ids":[0,1,2]}}';
   $te = (array) json_decode($t);
   $tex = (array) $te['poll_answer'];
