@@ -95,12 +95,12 @@ else{
 }
 
 
-function sendMessage($website, $params2){
+function sendMessage($website, $x){
   $chs = curl_init($website . '/sendMessage');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
-  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
+  curl_setopt($chs, CURLOPT_POSTFIELDS, ($x));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
 }
