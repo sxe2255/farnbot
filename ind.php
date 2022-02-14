@@ -68,7 +68,7 @@
   
   $textForSend = ' ';
   
-  
+  echo json_encode($params);
 if($content){
   // $contentS = (array)json_decode($content);
   // $contentSCallback = (array)$contentS['callback_query'];
