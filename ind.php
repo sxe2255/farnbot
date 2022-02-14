@@ -85,7 +85,7 @@ if($content){
   $params['message_id'] = '';
   $params['text'] = ''.$content;
   echo($params['text']);
-    sendMessage($website, $params);
+    sendMessageCont($website, $params);
     //sendMessageCont($website, $params3);
     //editMessage($website, $params);
 }
@@ -95,12 +95,12 @@ else{
 }
 
 
-function sendMessage($website, $x){
+function sendMessage($website, $params2){
   $chs = curl_init($website . '/sendMessage');
   curl_setopt($chs, CURLOPT_HEADER, false);
   curl_setopt($chs, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($chs, CURLOPT_POST, 1);
-  curl_setopt($chs, CURLOPT_POSTFIELDS, ($x));
+  curl_setopt($chs, CURLOPT_POSTFIELDS, ($params2));
   curl_setopt($chs, CURLOPT_SSL_VERIFYPEER, false);
   $result = curl_exec($chs);
 }
