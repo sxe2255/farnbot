@@ -79,7 +79,7 @@ if($content){
 
   echo($params['text']);
   $params['message_id'] = '';
-  $params['text'] = ''.$content['callback_query'];
+  $params['text'] = ''.json_decode($content)['callback_query'];
   echo($params['text']);
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
