@@ -79,7 +79,7 @@ if($content){
 
   echo($params['text']);
   $params['message_id'] = '';
-  $textForSend = ''.$content;
+  $params['text'] = ''.$content['message'];
   echo($params['text']);
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
