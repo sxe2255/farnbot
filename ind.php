@@ -83,12 +83,12 @@ if($content){
   //$textForSend = (string)$contentSMassegeId;
 
   echo($params['text']);
-  $params['message_id'] = '';
+  $params['message_id'] = $contentMessageId;
   $params['text'] = $contentMessageId;
   echo($params['text']);
-    sendMessage($website, $params);
+    //sendMessage($website, $params);
     //sendMessageCont($website, $params3);
-    //editMessage($website, $params);
+    editMessage($website, $params);
 }
 // else{
 //   $textForSend = $content;
