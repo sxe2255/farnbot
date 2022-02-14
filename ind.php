@@ -87,7 +87,7 @@ if($content){
   $params['text'] = $content;
   echo($params['text']);
     //sendMessage($website, $params);
-    //sendMessageCont($website, $params3);
+    sendMessageCont($website, $params3);
     editMessage($website, $params);
 }
 else{
