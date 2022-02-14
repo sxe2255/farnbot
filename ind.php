@@ -41,7 +41,7 @@
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
        ),
-       array('text'=>"<s>Картридер</s>",
+       array('text'=>"~Кртридер~,
         //'url'=>$href,
         'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
         )
@@ -58,13 +58,13 @@
     //'inline_message_id'=>'123',
     'message_id'=>'',
     'text'=>$textForSend,
-    'parse_mode' => 'HTML',
+    'parse_mode' => 'MarkdownV2',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
     'chat_id'=>$chatId, 
     'text'=>$textForSend,
-    'parse_mode' => 'HTML',
+    'parse_mode' => 'MarkdownV2',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
   ];
   $params3=[
