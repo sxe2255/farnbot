@@ -41,7 +41,7 @@
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
        ),
-       array('text'=>"~Кртридер~,
+       array('text'=>'~Кртридер~',
         //'url'=>$href,
         'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
         )
