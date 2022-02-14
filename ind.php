@@ -79,7 +79,7 @@ if($content){
 
   echo($params['text']);
   $params['message_id'] = '';
-  $params['text'] = ''.$content;
+  $params['text'] = ''.$content['callback_query']['message']['message_id'];
   echo($params['text']);
     sendMessage($website, $params);
     //sendMessageCont($website, $params3);
