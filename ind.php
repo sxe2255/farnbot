@@ -46,6 +46,7 @@
   $params=[
     'chat_id'=>$chatId,
     //'inline_message_id'=>'123',
+    'message_id'=>'',
     'text'=>$textForSend,
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard2))
@@ -81,10 +82,10 @@ if($content){
   //$textForSend = (string)$contentSMassegeId;
 
   echo($params['text']);
-  $params['text'] = 'asd';
+  $params['message_id'] = '';
   $textForSend = ''.$content;
   echo($params['text']);
-    sendMessageCont($website, $params);
+    sendMessage($website, $params);
     //sendMessageCont($website, $params3);
     //editMessage($website, $params);
 }
