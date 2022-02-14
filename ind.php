@@ -22,23 +22,24 @@
   $href='';
   $pArr=array('<p>','</p>','<br>');
   $prot = 111;
-  $keyboard = array(
+    $keyboard = array(
     array(
        array('text'=>'Ссылка на заявку',
        'id'=>'1223',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'inline_message_id':'123','asdasd':'asdaszxcd'}"
+       'callback_data'=>"{'text':".$prot.",'Картридер':'false','asdasd':'asdaszxcd'}"
        )
     )
   );
   $keyboard2 = array(
     array(
-       array('text'=>'"&#822;"ssss на заявку',
+       array('text'=>'ssss на заявку',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'asdasd':'asdaweszxcd','mjmj':'123asdz'}"
+       'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
        )
     )
   );
+
 
   $botToken="2129085674:AAG-NyC4bNJFEeUhy8ywWD0O-T2gfObm97I";
   $chatId = 91211691;
