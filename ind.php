@@ -27,7 +27,7 @@
        array('text'=>'Ссылка на заявку',
        'id'=>'1223',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'Картридер':'false','asdasd':'asdaszxcd'}"
+       'callback_data'=>"{'text':".$prot.",'cartrider':'false','asdasd':'asdaszxcd'}"
        )
     )
   );
@@ -35,7 +35,7 @@
     array(
        array('text'=>'ssss на заявку',
        //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
+       'callback_data'=>"{'text':".$prot.",'cartrider':'true','mjmj':'123asdz'}"
        )
     )
   );
@@ -88,7 +88,7 @@ if($content){
   $params['text'] = $content;
   echo($params['text']);
     //sendMessage($website, $params);
-    sendMessageCont($website, $params3);
+    sendMessageCont($website, $params);
     editMessage($website, $params);
 }
 else{
