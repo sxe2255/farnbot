@@ -34,9 +34,6 @@
        )
     )
   );
-  
-  $textForSend .= $content;
-
 
   $botToken="2129085674:AAG-NyC4bNJFEeUhy8ywWD0O-T2gfObm97I";
   $chatId = 91211691;
