@@ -33,7 +33,7 @@
   );
   $keyboard2 = array(
     array(
-       array('text'=>'ssss на заявку',
+       array('text'=>'"&#822;"ssss на заявку',
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'asdasd':'asdaweszxcd','mjmj':'123asdz'}"
        )
