@@ -41,7 +41,7 @@
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
        ),
-       array('text'=>'Кртридер',
+       array('text'=>'Кртридер'."\xE2\x9C\x85",
         //'url'=>$href,
         'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
         )
@@ -96,7 +96,7 @@ if($content){
   $params['text'] = $content;
   echo($params['text']);
     //sendMessage($website, $params);
-    sendMessageCont($website, $params);
+    //sendMessageCont($website, $params);
     editMessage($website, $params);
 }
 else{
