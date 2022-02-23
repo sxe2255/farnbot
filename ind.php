@@ -95,7 +95,7 @@ if($content){
   $params['message_id'] = $contentMessageId;
   $params['text'] = $content;
   echo($params['text']);
-    //sendMessage($website, $params);
+    sendMessage($website, $params);
     //sendMessageCont($website, $params);
     editMessage($website, $params);
 }
