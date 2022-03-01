@@ -61,7 +61,8 @@
     'reply_markup' =>  json_encode(array('inline_keyboard' => $keyboard2))
   ];
   $params2=[
-    'chat_id'=>$chatId, 
+    'chat_id'=>$chatId,
+    'message_id'=>'', 
     'text'=>$textForSend,
     'parse_mode' => 'HTML',
     'reply_markup' => json_encode(array('inline_keyboard' => $keyboard))
@@ -89,7 +90,7 @@ if($content){
   if(stripos($contentData,"'Картиридер':'false'")){
     editMessage($website, $params);
   }else if(stripos($contentData,"'Картиридер':'true'")){
-    
+    $params2['message_id'] = $contentMessageId;
     editMessage($website, $params2);
   }
 
