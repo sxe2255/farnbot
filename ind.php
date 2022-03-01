@@ -82,7 +82,7 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params['text'] = $contentMessage;
+  $params['text'] = $contentData;
 
     sendMessage($website, $params);
     //sendMessageCont($website, $params);
