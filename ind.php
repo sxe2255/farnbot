@@ -82,7 +82,7 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params['text'] = $contentData;
+  $params['text'] = $contentData['Картиридер'];
 
     sendMessage($website, $params);
     //sendMessageCont($website, $params);
