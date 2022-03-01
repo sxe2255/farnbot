@@ -10,7 +10,7 @@
 	$contentCallback = (array) $contentArr['callback_query'];
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
-  $contentData = (array) $contentCallback['reply_markup'];
+  $contentData = json_decode($contentCallback['data']);
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
@@ -23,20 +23,29 @@
   $href='';
   $pArr=array('<p>','</p>','<br>');
   $prot = 111;
-    $keyboard = 
+    $keyboard = array(
+    array(
       array('text'=>'Картридер',
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'Картиридер':'false','mjmj':'123asdz'}"
+       )
+    )
   );
-  $keyboard2 = 
+  $keyboard2 = array(
+    array(
        array('text'=>'Кртридер'."\xE2\x9C\x85",
         //'url'=>$href,
         'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
+        )
+    )
   );
-  $keyboard3 = 
+  $keyboard3 = array(
+    array(
        array('text'=>'Кртридер'."\xE2\x9C\x85",
         //'url'=>$href,
         'callback_data'=>"{'text':".$prot.",'Картиридер':'false','mjmj':'123asdz'}"
+        )
+    )
   );
 
   $botToken="2129085674:AAG-NyC4bNJFEeUhy8ywWD0O-T2gfObm97I";
