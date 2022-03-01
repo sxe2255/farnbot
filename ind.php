@@ -10,7 +10,7 @@
 	$contentCallback = (array) $contentArr['callback_query'];
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
-  $contentData = $contentCallback['data'];
+  $contentData = json_decode($contentCallback['data']);
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
