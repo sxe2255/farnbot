@@ -10,7 +10,7 @@
 	$contentCallback = (array) $contentArr['callback_query'];
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
-  $contentData = json_decode($contentCallback['data']);
+  $contentData = $contentCallback['data'];
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
@@ -84,9 +84,16 @@ if($content){
   $params['message_id'] = $contentMessageId;
   $params['text'] = $contentData;
 
-    sendMessage($website, $params);
+    //sendMessage($website, $params);
     //sendMessageCont($website, $params);
+  if(stripos($contentData,"'Картиридер':'false'")){
     editMessage($website, $params);
+  }else if(stripos($contentData,"'Картиридер':'true'")){
+    
+    editMessage($website, $params2);
+  }
+
+    //editMessage($website, $params);
 }
 else{
 	$textForSend = $content;
