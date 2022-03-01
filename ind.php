@@ -4,7 +4,7 @@
 	$textForSend = "hi hi hi"; 
   $t = '{"update_id":552461978,"poll_answer":{"poll_id":"5248948977767809147","user":{"id":91211691,"is_bot":false,"first_name":"Ilya","last_name":"Kanapelka","username":"Ilyakanapelka","language_code":"ru"},"option_ids":[0,1,2]}}';
   $te = (array) json_decode($t);
-  $tex = ison_decode((array) $te['poll_answer']);
+  $tex = json_decode((array) $te['poll_answer']);
 	
 	$contentArr = (array) json_decode($content);
 	$contentCallback = (array) $contentArr['callback_query'];
