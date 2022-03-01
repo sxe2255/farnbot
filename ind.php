@@ -10,6 +10,7 @@
 	$contentCallback = (array) $contentArr['callback_query'];
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
+  $contentData = (array) $contentCallback['data'];
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
@@ -24,11 +25,6 @@
   $prot = 111;
     $keyboard = array(
     array(
-       array('text'=>'Ссылка на заявку',
-       'id'=>'1223',
-       //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'Картридер':'false','asdasd':'asdaszxcd'}"
-      ),
       array('text'=>'Картридер',
        //'url'=>$href,
        'callback_data'=>"{'text':".$prot.",'Картиридер':'false','mjmj':'123asdz'}"
@@ -37,17 +33,20 @@
   );
   $keyboard2 = array(
     array(
-       array('text'=>'ssss на заявку',
-       //'url'=>$href,
-       'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
-       ),
        array('text'=>'Кртридер'."\xE2\x9C\x85",
         //'url'=>$href,
         'callback_data'=>"{'text':".$prot.",'Картиридер':'true','mjmj':'123asdz'}"
         )
     )
   );
-
+  $keyboard3 = array(
+    array(
+       array('text'=>'Кртридер'."\xE2\x9C\x85",
+        //'url'=>$href,
+        'callback_data'=>"{'text':".$prot.",'Картиридер':'false','mjmj':'123asdz'}"
+        )
+    )
+  );
 
   $botToken="2129085674:AAG-NyC4bNJFEeUhy8ywWD0O-T2gfObm97I";
   $chatId = 91211691;
@@ -81,21 +80,11 @@
   
   echo json_encode($params);
 if($content){
-  // $contentS = (array)json_decode($content);
-  // $contentSCallback = (array)$contentS['callback_query'];
-  // $contentSMassege = (array) $contentS['message'];
-  // $contentSMassegeId = $contentSMassege['message_id'];
-  // $params['inline_message_id'] = $contentSCallback['id'];
-  // $params['text'] =''.$content;
-  // $textForSend='';
-  //$keyboard2[0][0]['callback_data'] = $keyboard2[0][0]['callback_data'].",massage_text".':'."sasdasdasdasd";
-  //$textForSend = (string)$contentSMassegeId;
 
-  echo($params['text']);
   $params['message_id'] = $contentMessageId;
-  $params['text'] = $content;
-  echo($params['text']);
-    //sendMessage($website, $params);
+  $params['text'] = $contentData;
+
+    sendMessage($website, $params);
     //sendMessageCont($website, $params);
     editMessage($website, $params);
 }
