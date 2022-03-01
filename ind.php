@@ -31,14 +31,14 @@
       array('text'=>'Изображение с камер (SMART)',
             'callback_data'=>"{'Изображение с камер (SMART)':'false'}"
       ),
-      array('text'=>'Свободное место на диске VIDEO (SMART)',
-            'callback_data'=>"{'Свободное место на диске VIDEO(SMART)':'false'}"
+      array('text'=>'Свободное место VIDEO (SMART)',
+            'callback_data'=>"{'Свободное место VIDEO(SMART)':'false'}"
       ),
       array('text'=>'Факт записи камер (SMART)',
             'callback_data'=>"{'Факт записи камер (SMART)':'false'}"
       ),
-      array('text'=>'Очистка системного диска от старый LOG-файлов',
-            'callback_data'=>"{'Очистка системного диска от старый LOG-файлов':'false'}"
+      array('text'=>'Очистка LOG-файлов',
+            'callback_data'=>"{'Очистка LOG-файлов':'false'}"
       ),
       array('text'=>'Тест диспенсера',
             'callback_data'=>"{'Тест диспенсера':'false'}"
