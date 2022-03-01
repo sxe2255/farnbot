@@ -31,7 +31,36 @@
       array('text'=>'Изображение с камер (SMART)',
             'callback_data'=>"{'Изображение с камер (SMART)':'false'}"
       ),
-      
+      array('text'=>'Свободное место на диске VIDEO (SMART)',
+            'callback_data'=>"{'Свободное место на диске VIDEO(SMART)':'false'}"
+      ),
+      array('text'=>'Факт записи камер (SMART)',
+            'callback_data'=>"{'Факт записи камер (SMART)':'false'}"
+      ),
+      array('text'=>'Очистка системного диска от старый LOG-файлов',
+            'callback_data'=>"{'Очистка системного диска от старый LOG-файлов':'false'}"
+      ),
+      array('text'=>'Тест диспенсера',
+            'callback_data'=>"{'Тест диспенсера':'false'}"
+      ),
+      array('text'=>'Тест чекового принтера',
+            'callback_data'=>"{'Тест чекового принтера':'false'}"
+      ),
+      array('text'=>'Тестовая операция',
+            'callback_data'=>"{'Тестовая операция':'false'}"
+      ),
+      array('text'=>'Изображение с камер (TRAL)',
+            'callback_data'=>"{'Изображение с камер (TRAL)':'false'}"
+      ),
+      array('text'=>'Состояние HDD (TRAL)',
+            'callback_data'=>"{'Состояние HDD (TRAL)':'false'}"
+      ),
+      array('text'=>'Факт записи камер (TRAL)',
+            'callback_data'=>"Факт записи камер (TRAL)':'false'}"
+      ),
+      array('text'=>'Закончил!',
+            'callback_data'=>"{'Закончил!':'false'}"
+      )
     )
   );
   $keyboard2 = array(
