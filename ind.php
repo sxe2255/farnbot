@@ -192,16 +192,16 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params['text'] .= $content;
+  $params['text'] =''.$content;
 
     sendMessage($website, $params);
     //sendMessageCont($website, $params);
-  if(stripos($contentData,"'Картридер':'false'")){
-    editMessage($website, $params);
-  }else if(stripos($contentData,"'Картридер':'true'")){
-    $params2['message_id'] = $contentMessageId;
-    editMessage($website, $params2);
-  }
+  // if(stripos($contentData,"'Картридер':'false'")){
+  //   editMessage($website, $params);
+  // }else if(stripos($contentData,"'Картридер':'true'")){
+  //   $params2['message_id'] = $contentMessageId;
+  //   editMessage($website, $params2);
+  // }
 
     //editMessage($website, $params);
 }
