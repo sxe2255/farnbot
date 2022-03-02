@@ -27,7 +27,9 @@
     array(
       array('text'=>'Картридер',
             'callback_data'=>"{'Картридер':'false'}"
-      ),
+      )
+    ),
+    array(
       array('text'=>'Изображение с камер (SMART)',
             'callback_data'=>"{'Изображение с камер (SMART)':'false'}"
       ),
