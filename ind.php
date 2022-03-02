@@ -98,8 +98,8 @@
       )
     ),
     array(
-      array('text'=>'Свободное место на диске VIDEO более 100 ГБ (SMART)'."\xE2\x9C\x85",
-            'callback_data'=>"{'Свободное место на диске VIDEO более 100 ГБ (SMART)':'true'}"
+      array('text'=>'Свободное место VIDEO (SMART)'."\xE2\x9C\x85",
+            'callback_data'=>"{'Свободное место VIDEO (SMART)':'true'}"
       )
     ),
     array(
@@ -108,8 +108,8 @@
       )
     ),
     array(
-      array('text'=>'Очистка системного диска от старый LOG-файлов'."\xE2\x9C\x85",
-            'callback_data'=>"{'Очистка системного диска от старый LOG-файлов':'true'}"
+      array('text'=>'Очистка LOG-файлов'."\xE2\x9C\x85",
+            'callback_data'=>"{'Очистка LOG-файлов':'true'}"
       )
     ),
     array(
@@ -194,14 +194,14 @@ if($content){
   $params['message_id'] = $contentMessageId;
   $params2['text'] =''.$content;
 
-    sendMessage($website, $params2);
+  //  sendMessage($website, $params2);
     //sendMessageCont($website, $params);
-  // if(stripos($contentData,"'Картридер':'false'")){
-  //   editMessage($website, $params);
-  // }else if(stripos($contentData,"'Картридер':'true'")){
-  //   $params2['message_id'] = $contentMessageId;
-  //   editMessage($website, $params2);
-  // }
+  if(stripos($contentData,"'Картридер':'false'")){
+    editMessage($website, $params);
+  }else if(stripos($contentData,"'Картридер':'true'")){
+    $params2['message_id'] = $contentMessageId;
+    editMessage($website, $params2);
+  }
 
     //editMessage($website, $params);
 }
