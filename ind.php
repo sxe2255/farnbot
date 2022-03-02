@@ -194,7 +194,7 @@ if($content){
   $params['message_id'] = $contentMessageId;
   $params['text'] =''.$content;
 
-    sendMessage($website, $params);
+    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
   // if(stripos($contentData,"'Картридер':'false'")){
   //   editMessage($website, $params);
