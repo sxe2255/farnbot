@@ -15,7 +15,7 @@
   $contentData = $contentCallback['data'];
 
 
-  $contentReplyMarkup = (array) $contentCallback['reply_markup'];
+  $contentReplyMarkup = (array) $contentMessage['reply_markup'];
   $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'][0][0]->text;
 
 
