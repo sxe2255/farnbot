@@ -31,7 +31,7 @@
   ));
 
   $arrayContentReply = (array)$arrayContent['reply_markup'];
-var_dump($arrayContentReply['inline_keyboard']);
+var_dump($arrayContentReply['inline_keyboard'][0]);
 
   // $contentReplyMarkup = $contentCallback['reply_markup'];
   // $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'];
