@@ -63,7 +63,7 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$contentReplyMarkup;
+  $params2['text'] =''.var_dump($contentReplyMarkup);
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
