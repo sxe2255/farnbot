@@ -13,7 +13,25 @@
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
   $contentData = $contentCallback['data'];
-  $contentReplyMarkup = $contentCallback['reply_markup'];
+
+  $arrayContent = array('reply_markup' => 
+  (object) array(
+     'inline_keyboard' => 
+    array (
+      0 => 
+      array (
+        0 => 
+        (object) array(
+           'text' => 'Картридер',
+           'callback_data' => '{Картридер:false}',
+        ),
+      )
+      
+    ),
+  ));
+var_dump($arrayContent);
+
+  // $contentReplyMarkup = $contentCallback['reply_markup'];
   // $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'];
   // $contentInlineKeyboard0 = $contentInlineKeyboard[0];
   // $contentInlineKeyboard00 = (array)$contentInlineKeyboard0[0];
