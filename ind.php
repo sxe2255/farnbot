@@ -14,30 +14,10 @@
 	$contentMessageId = $contentMessage['message_id'];
   $contentData = $contentCallback['data'];
 
-  $arrayContent = array('reply_markup' => 
-  (object) array(
-     'inline_keyboard' => 
-    array (
-      0 => 
-      array (
-        0 => 
-        (object) array(
-           'text' => 'Картридер',
-           'callback_data' => '{Картридер:false}',
-        ),
-      )
-      
-    ),
-  ));
 
-  $arrayContentReply = (array)$arrayContent['reply_markup'];
-var_dump($arrayContentReply['inline_keyboard'][0][0]->text);
+  $contentReplyMarkup = (array) $contentCallback['reply_markup'];
+  $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'][0][0]->text;
 
-  // $contentReplyMarkup = $contentCallback['reply_markup'];
-  // $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'];
-  // $contentInlineKeyboard0 = $contentInlineKeyboard[0];
-  // $contentInlineKeyboard00 = (array)$contentInlineKeyboard0[0];
-  // $contentInlineKeyboard00Text = $contentInlineKeyboard00->'text';
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
@@ -87,7 +67,7 @@ var_dump($arrayContentReply['inline_keyboard'][0][0]->text);
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$contentReplyMarkup;
+  $params2['text'] =''.$contentInlineKeyboard;
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
