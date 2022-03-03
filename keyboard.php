@@ -61,7 +61,7 @@ $keyboardFalseCineo = array(
       )
     )
   );
-  
+
   $keyboardTrueAllCineo = array(
     array(
       array('text'=>'Картридер'."\xE2\x9C\x85",
@@ -133,8 +133,58 @@ $keyboardFalseCineo = array(
       )
     ),
     array(
-      array('text'=>'Изображение с камер (SMART)'."\xE2\x9C\x85",
+      array('text'=>'Изображение с камер (SMART)',
             'callback_data'=>"{'Изображение с камер (SMART)':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Свободное место VIDEO (SMART)',
+            'callback_data'=>"{'Свободное место VIDEO(SMART)':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Факт записи камер (SMART)',
+            'callback_data'=>"{'Факт записи камер (SMART)':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Очистка LOG-файлов',
+            'callback_data'=>"{'Очистка LOG-файлов':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Тест диспенсера',
+            'callback_data'=>"{'Тест диспенсера':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Тест чекового принтера',
+            'callback_data'=>"{'Тест чекового принтера':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Тестовая операция',
+            'callback_data'=>"{'Тестовая операция':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Изображение с камер (TRAL)',
+            'callback_data'=>"{'Изображение с камер (TRAL)':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Состояние HDD (TRAL)',
+            'callback_data'=>"{'Состояние HDD (TRAL)':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Факт записи камер (TRAL)',
+            'callback_data'=>"Факт записи камер (TRAL)':'false'}"
+      )
+    ),
+    array(
+      array('text'=>'Закончил!',
+            'callback_data'=>"{'Закончил!':'false'}"
       )
     )
   );
