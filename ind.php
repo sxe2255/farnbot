@@ -14,6 +14,10 @@
 	$contentMessageId = $contentMessage['message_id'];
   $contentData = $contentCallback['data'];
   $contentReplyMarkup = (array)$contentCallback['reply_markup'];
+  $contentInlineKeyboard = (array) $contentReplyMarkup['inline_keyboard'];
+  $contentInlineKeyboard0 = (array) $contentInlineKeyboard0;
+  $contentInlineKeyboard00 = (array) $contentInlineKeyboard[0];
+  // $contentInlineKeyboard00Text = $contentInlineKeyboard00->'text';
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
@@ -63,7 +67,7 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$contentReplyMarkup['inline_keyboard'];
+  $params2['text'] =''.$contentInlineKeyboard00->text;
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
