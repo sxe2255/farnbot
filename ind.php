@@ -67,13 +67,13 @@ if($content){
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
-  if(stripos($contentData,"'Картридер':'false'")){
-    $params['reply_markup'] = json_encode(array('inline_keyboard' => $keyboardTrueCardriderCineo));
-    editMessage($website, $params);
-  }else if(stripos($contentData,"'Картридер':'true'")){
-    $params2['message_id'] = $contentMessageId;
-    editMessage($website, $params2);
-  }
+//   if(stripos($contentData,"'Картридер':'false'")){
+//     $params['reply_markup'] = json_encode(array('inline_keyboard' => $keyboardTrueCardriderCineo));
+//     editMessage($website, $params);
+//   }else if(stripos($contentData,"'Картридер':'true'")){
+//     $params2['message_id'] = $contentMessageId;
+//     editMessage($website, $params2);
+//   }
 
     //editMessage($website, $params);
 }
