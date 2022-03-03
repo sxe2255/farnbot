@@ -29,7 +29,7 @@
       
     ),
   ));
-var_dump($arrayContent);
+var_dump((array)$arrayContent)['reply_markup'];
 
   // $contentReplyMarkup = $contentCallback['reply_markup'];
   // $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'];
@@ -39,7 +39,7 @@ var_dump($arrayContent);
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
-  var_dump ($tex['option_ids']);
+//  var_dump ($tex['option_ids']);
   for($y=0;$y<=count($tex['option_ids'])-1;$y++){
     echo $tex['option_ids'][$y];
   }
