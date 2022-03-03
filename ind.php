@@ -29,7 +29,9 @@
       
     ),
   ));
-var_dump((array)$arrayContent)['reply_markup'];
+
+  $arrayContentReply = (array)$arrayContent['reply_markup'];
+var_dump($arrayContentReply['inline_keyboard']);
 
   // $contentReplyMarkup = $contentCallback['reply_markup'];
   // $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'];
