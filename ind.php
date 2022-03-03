@@ -16,7 +16,7 @@
 
 
   $contentReplyMarkup = (array) $contentMessage['reply_markup'];
-  $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'][0][0]->text;
+  $contentInlineKeyboard = $contentReplyMarkup['inline_keyboard'][2][0]->text;
 
 
   $userInfo = (array) $tex['user']; 
