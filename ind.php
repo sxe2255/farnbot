@@ -13,6 +13,7 @@
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
   $contentData = $contentCallback['data'];
+  $contentReplyMarkup = $contentCallback['reply_markup'];
 
   $userInfo = (array) $tex['user']; 
   $userId = $userInfo['id'];
@@ -62,9 +63,9 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$content;
+  $params2['text'] =''.$contentReplyMarkup;
 
-  //  sendMessage($website, $params2);
+   sendMessage($website, $params2);
     //sendMessageCont($website, $params);
   if(stripos($contentData,"'Картридер':'false'")){
     $params['reply_markup'] = json_encode(array('inline_keyboard' => $keyboardTrueCardriderCineo));
