@@ -1,5 +1,5 @@
 <?php
-$keyboard = array(
+$keyboardFalseCineo = array(
     array(
       array('text'=>'Картридер',
             'callback_data'=>"{'Картридер':'false'}"
@@ -61,7 +61,8 @@ $keyboard = array(
       )
     )
   );
-  $keyboard2 = array(
+  
+  $keyboardTrueAllCineo = array(
     array(
       array('text'=>'Картридер'."\xE2\x9C\x85",
         //'url'=>$href,
@@ -124,12 +125,17 @@ $keyboard = array(
       )
     )
   );
-  $keyboard3 = array(
+  $keyboardTrueCardriderCineo = array(
     array(
-       array('text'=>'Картридер'."\xE2\x9C\x85",
+      array('text'=>'Картридер'."\xE2\x9C\x85",
         //'url'=>$href,
-        'callback_data'=>"{'text':".$prot.",'Картиридер':'false','mjmj':'123asdz'}"
-        )
+        'callback_data'=>"{'Картридер':'true'}"
+      )
+    ),
+    array(
+      array('text'=>'Изображение с камер (SMART)'."\xE2\x9C\x85",
+            'callback_data'=>"{'Изображение с камер (SMART)':'false'}"
+      )
     )
   );
   ?>
