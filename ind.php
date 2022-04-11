@@ -64,7 +64,7 @@
   $textForSend = ' ';
   
   echo json_encode($params);
-// if($content){
+if($content){
   // for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
   //   if()
   // }
