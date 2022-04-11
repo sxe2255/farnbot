@@ -67,7 +67,7 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$contentInlineKeyboard;
+  $params2['text'] =''.$content;
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
