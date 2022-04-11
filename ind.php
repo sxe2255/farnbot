@@ -72,7 +72,7 @@ if($content){
   //   }
   // }
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$contentData[1];
+  $params2['text'] =''.substr($contentData[0],2);
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
