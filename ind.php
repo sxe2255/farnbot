@@ -12,7 +12,7 @@
 	$contentCallback = (array) $contentArr['callback_query'];
 	$contentMessage = (array) $contentCallback['message'];
 	$contentMessageId = $contentMessage['message_id'];
-  $contentData = $contentCallback['data'];
+  $contentData = (array)$contentCallback['data'];
 
 
   $contentReplyMarkup = (array) $contentMessage['reply_markup'];
@@ -65,14 +65,14 @@
   
   echo json_encode($params);
 if($content){
-  for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
-    $inlineKeyboardReplyMarkup = (array) $contentReplyMarkup['inline_keyboard'][$x][0];
-    if($contentData-> $inlineKeyboardReplyMarkup[0]){
-      $params2['text'] =''.$contentData;
-    }
-  }
+  // for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
+  //   $inlineKeyboardReplyMarkup = (array) $contentReplyMarkup['inline_keyboard'][$x][0];
+  //   if($contentData-> $inlineKeyboardReplyMarkup[0]){
+  //     $params2['text'] =''.$contentData;
+  //   }
+  // }
   $params['message_id'] = $contentMessageId;
-  // $params2['text'] =''.$contentData;
+  $params2['text'] =''.$contentData[0];
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
