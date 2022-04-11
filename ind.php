@@ -67,8 +67,7 @@
 if($content){
 
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$content;
-
+  $params2['text'] =''.count($contentReplyMarkup['inline_keyboard']);
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
   // if(stripos($contentData,"'Картридер':'false'")){
