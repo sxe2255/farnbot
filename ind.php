@@ -64,10 +64,13 @@
   $textForSend = ' ';
   
   echo json_encode($params);
-if($content){
-
+// if($content){
+  // for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
+  //   if()
+  // }
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.count($contentReplyMarkup['inline_keyboard']);
+  $params2['text'] =''.$contentData;
+
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
   // if(stripos($contentData,"'Картридер':'false'")){
