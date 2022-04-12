@@ -66,7 +66,7 @@
   echo json_encode($params);
 if($content){
   $stringDataFromRequest = substr($contentData[0],2, (stripos($contentData[0],"'",3)-2));
-  for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
+  for($x = 0;$x<count($contentReplyMarkup['inline_keyboard']);$x++){
     $inlineKeyboardReplyMarkup = (array) $contentReplyMarkup['inline_keyboard'][$x][0];
 //     if($inlineKeyboardReplyMarkup[0] === $stringDataFromRequest){
 //       $params2['text'] =''.$stringDataFromRequest;
