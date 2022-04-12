@@ -71,7 +71,7 @@ if($content){
     if($inlineKeyboardReplyMarkup === $stringDataFromRequest){
       // $keyboardFalseCineo[0][$x]->text = $stringDataFromRequest."\xE2\x9C\x85";
       
-  $params2['text'] =''.$keyboardFalseCineo[0][$x][0]->text;
+  $params2['text'] .=$keyboardFalseCineo[0][$x][0]->text;
     }
   }
   $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][2][0]->text;
