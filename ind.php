@@ -65,14 +65,15 @@
   
   echo json_encode($params);
 if($content){
-  // for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
-  //   $inlineKeyboardReplyMarkup = (array) $contentReplyMarkup['inline_keyboard'][$x][0];
-  //   if($contentData-> $inlineKeyboardReplyMarkup[0]){
-  //     $params2['text'] =''.$contentData;
-  //   }
-  // }
+  $stringDataFromRequest = substr($contentData[0],2, (stripos($contentData[0],"'",3)-2));
+  for($x = 0;x<count($contentReplyMarkup['inline_keyboard']);$x++){
+    $inlineKeyboardReplyMarkup = (array) $contentReplyMarkup['inline_keyboard'][$x][0];
+    if($contentData-> substr($contentData[0],2, $stringDataFromRequest)){
+      $params2['text'] =''.$contentData;
+    }
+  }
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.substr($contentData[0],2, (stripos($contentData[0],"'",3)-2));
+  // $params2['text'] =''.substr($contentData[0],2, (stripos($contentData[0],"'",3)-2));
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
