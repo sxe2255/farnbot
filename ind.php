@@ -71,7 +71,7 @@ if($content){
 //     if($inlineKeyboardReplyMarkup[0] === $stringDataFromRequest){
 //       $params2['text'] =''.$stringDataFromRequest;
 //     }
-	  $params2['text'] =''.count($contentReplyMarkup['inline_keyboard']);
+	  $params2['text'] =''.$x;
   }
   $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][2][0]->text;
 
