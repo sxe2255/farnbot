@@ -69,7 +69,7 @@ if($content){
   for($x = 0;$x<count($contentReplyMarkup['inline_keyboard']);$x++){
     $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][$x][0]->text;
     if($inlineKeyboardReplyMarkup === $stringDataFromRequest){
-      $params2['text'] =''.$stringDataFromRequest;
+      $keyboardFalseCineo[0][$x]->text = $stringDataFromRequest."\xE2\x9C\x85";
     }
   }
   $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][2][0]->text;
@@ -77,7 +77,8 @@ if($content){
   $params['message_id'] = $contentMessageId;
   //$params2['text'] =''.$inlineKeyboardReplyMarkup;
 
-   sendMessage($website, $params2);
+  //  sendMessage($website, $params2);
+   editMessage($website, $params2);
     //sendMessageCont($website, $params);
   // if(stripos($contentData,"'Картридер':'false'")){
   //   $params['reply_markup'] = json_encode(array('inline_keyboard' => $keyboardTrueCardriderCineo));
