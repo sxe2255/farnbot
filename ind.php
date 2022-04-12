@@ -62,7 +62,7 @@
   //var_dump($keyboard2[0][0]['callback_data']);
   
   $textForSend = ' ';
-  
+  var_dump($keyboardFalseCineo);
   echo json_encode($params);
 if($content){
   $stringDataFromRequest = substr($contentData[0],2, (stripos($contentData[0],"'",3)-2));
