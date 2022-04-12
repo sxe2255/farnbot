@@ -73,7 +73,7 @@ if($content){
   //   }
   // }
   $params['message_id'] = $contentMessageId;
-  $params2['text'] =''.$contentReplyMarkup['inline_keyboard'][2][0]->$stringDataFromRequest;
+  $params2['text'] =''.gettype($stringDataFromRequest);
 
    sendMessage($website, $params2);
     //sendMessageCont($website, $params);
