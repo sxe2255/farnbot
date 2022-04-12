@@ -72,7 +72,7 @@ if($content){
   //     $params2['text'] =''.$stringDataFromRequest;
   //   }
   // }
-  $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][2];
+  $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][2][0]->text;
 
   $params['message_id'] = $contentMessageId;
   $params2['text'] =''.$inlineKeyboardReplyMarkup;
