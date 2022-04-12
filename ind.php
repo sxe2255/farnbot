@@ -68,10 +68,9 @@ if($content){
   $stringDataFromRequest = substr($contentData[0],2, (stripos($contentData[0],"'",3)-2));
   for($x = 0;$x<count($contentReplyMarkup['inline_keyboard']);$x++){
     $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][$x][0]->text;
-//     if($inlineKeyboardReplyMarkup[0] === $stringDataFromRequest){
-//       $params2['text'] =''.$stringDataFromRequest;
-//     }
-	  $params2['text'] .=$inlineKeyboardReplyMarkup;
+    if($inlineKeyboardReplyMarkup === $stringDataFromRequest){
+      $params2['text'] =''.$stringDataFromRequest;
+    }
   }
   $inlineKeyboardReplyMarkup = $contentReplyMarkup['inline_keyboard'][2][0]->text;
 
